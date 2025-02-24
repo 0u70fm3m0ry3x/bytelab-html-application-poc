@@ -1,0 +1,22 @@
+<html>
+    <!--
+    Run .hta-Application by Win+R and then enter mshta.exe "[pathtofile].hta"
+    Modern browsers will block the download of .hta and .lnk-files 
+    >> due to this we have to wrap the .hta-file into a zip
+    -->
+    <body>
+        <script language="JavaScript">
+                try {
+                    var shell = new ActiveXObject("WScript.Shell");
+                    var filePath = "C:\\Daten\\neueDatei.txt"; 
+                    
+                    var command = 'powershell.exe -NoProfile -ExecutionPolicy Bypass -Command "New-Item -Path \'' + filePath + '\' -ItemType File -Force"';
+                    shell.Run(command, 0, true); // 0 = Unsichtbar, true = Warten auf Abschluss
+
+                    alert("File wurde erstellt!");
+                } catch (e) {
+                    alert("Fehler: " + e.message);
+                }
+        </script>
+    </body>
+</html>

